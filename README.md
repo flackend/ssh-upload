@@ -39,5 +39,5 @@ box build
 View information about the tool:
 
 ```bash
-./hello.phar --help
+./sshupload.phar --help
 ```
