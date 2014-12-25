@@ -21,7 +21,7 @@ class UploadCommand extends Command
         $this
             ->setName('upload')
             ->setDescription('Upload a screenshot to a server over SSH.')
-            ->addArgument('filePath', InputArgument::REQUIRED, 'Path to the file that is to be uploaded.');
+            ->addArgument('file-path', InputArgument::REQUIRED, 'Path to the file that is to be uploaded.');
     }
 
     /**
@@ -32,7 +32,7 @@ class UploadCommand extends Command
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $file = $this->processFilePath($input->getArgument('filePath'));
+        $file = $this->processFilePath($input->getArgument('file-path'));
         $output->writeln("<comment>Starting upload of {$file->fileName}.</comment>");
         exec('scp ' . $file->fullPath . ' bluehost:~/www/other/img');
         exec('printf ' . $file->url . ' | pbcopy');
