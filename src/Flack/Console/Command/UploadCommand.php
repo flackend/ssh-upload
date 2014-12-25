@@ -25,7 +25,7 @@ class UploadCommand extends Command
     {
         $this
             ->setName('upload')
-            ->setDescription('Upload a screenshot to a server over SSH.')
+            ->setDescription('Upload a file to a server over SSH.')
             ->addArgument('file-path', InputArgument::REQUIRED, 'Path to the file that is to be uploaded.');
     }
 

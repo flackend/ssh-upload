@@ -7,5 +7,5 @@ require __DIR__ . '/../vendor/autoload.php';
 use Flack\Console\Command\UploadCommand;
 use Flack\Console\Application\SingleCommandApplication;
 
-$app = new SingleCommandApplication('ScreenCloudUpload', '0.1');
+$app = new SingleCommandApplication('SSHUpload', '0.1');
 $app->run();
