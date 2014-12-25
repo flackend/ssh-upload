@@ -1,12 +1,6 @@
-# Hello App
+# SSH Upload
 
-This is a very simple "Hello, World" command-line app. The purpose was to learn how to use Symfony's [Console](https://github.com/symfony/Console) package to create a single-command CLI app and make it distributable as a single file with [Box](https://github.com/box-project/box2).
-
-## Resources
-
-- [https://laracasts.com/series/how-to-build-command-line-apps-in-php](https://laracasts.com/series/how-to-build-command-line-apps-in-php)
-- [http://moquet.net/blog/distributing-php-cli/](http://moquet.net/blog/- distributing-php-cli/)
-- [http://symfony.com/doc/current/components/console/single_command_tool.html](http://symfony.com/doc/current/components/console/single_command_tool.html)
+This is a very simple SSH upload command-line app.
 
 ## Building
 
