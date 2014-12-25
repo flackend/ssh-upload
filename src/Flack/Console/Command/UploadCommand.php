@@ -12,6 +12,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 class UploadCommand extends Command
 {
 
+    const REMOTE_HOST = 'bluehost';
+    const REMOTE_PATH = '~/www/other/img';
+    const REMOTE_DOMAIN = '~/www/other/img';
+    const REMOTE_BASE_URL = 'http://flackend.com/other/img/';
+
     /**
      * Configures the command. Sets the command name, description, arguments,
      * and options.
@@ -34,7 +39,7 @@ class UploadCommand extends Command
     {
         $file = $this->processFilePath($input->getArgument('file-path'));
         $output->writeln("<comment>Starting upload of {$file->fileName}.</comment>");
-        exec('scp ' . $file->fullPath . ' bluehost:~/www/other/img');
+        exec('scp ' . $file->fullPath . ' ' . self::REMOTE_HOST . ':' . self::REMOTE_PATH);
         exec('printf ' . $file->url . ' | pbcopy');
         $output->writeln("<comment>Finished! Uploaded to {$file->url}.</comment>");
     }
@@ -51,7 +56,7 @@ class UploadCommand extends Command
         $file = new StdClass;
         $file->fullPath = $filePath;
         $file->fileName = basename($filePath);
-        $file->url = 'http://flackend.com/other/img/' . $file->fileName;
+        $file->url = self::REMOTE_BASE_URL . $file->fileName;
         return $file;
     }
 }
