@@ -39,7 +39,7 @@ class UploadCommand extends Command
     {
         $file = $this->processFilePath($input->getArgument('file-path'));
         $output->writeln("<comment>Starting upload of {$file->fileName}.</comment>");
-        exec('scp ' . $file->fullPath . ' ' . self::REMOTE_HOST . ':' . self::REMOTE_PATH);
+        exec('scp "' . $file->fullPath . '" ' . self::REMOTE_HOST . ':' . self::REMOTE_PATH);
         exec('printf ' . $file->url . ' | pbcopy');
         $output->writeln("<comment>Finished! Uploaded to {$file->url}.</comment>");
     }
